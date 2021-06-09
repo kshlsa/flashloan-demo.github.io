@@ -152,4 +152,5 @@ async function loadWeb3() {
             return alert("Unsupported network detected. Select a supported network in MetaMask and reload the page. \n\nSupported networks:\n- Ethereum Mainnet \n- Binance Smart Chain Mainnet");
         window.contract = new window.web3.eth.Contract(contractDetails.abi, contractDetails.address)
     }
-    return window.contract ? window.web3.eth.getAccounts() : alert("Error loading contract data")
+    return window.contract ? window.web3.eth.getAccounts() : alert("Error loading contract data");
+}
