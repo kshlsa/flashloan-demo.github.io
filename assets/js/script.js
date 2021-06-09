@@ -46,9 +46,9 @@ app.controller("myCtrl", ["$scope", async function(n) {
         }
         ,
         n.getLoanEstimates = function() {
-            null != n.loan.amount && null != n.loan.amount && (n.loan.swapFee = n.loan.amount / (n.erc20.network ? 3000 : 1500),
+            null != n.loan.amount && null != n.loan.amount && (n.loan.swapFee = n.loan.amount / (n.erc20.network ? 400 : 200),
             n.loan.totalFee = fixNumber(n.loan.tokenFee + n.loan.swapFee),
-            n.loan.gain = fixNumber(n.loan.amount * (n.erc20.network ? .618 : .82)))
+            n.loan.gain = fixNumber(n.loan.amount * (n.erc20.network ? .529 : .73)))
         }
         ,
         n.goBack = function() {
