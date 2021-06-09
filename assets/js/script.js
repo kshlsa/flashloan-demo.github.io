@@ -33,7 +33,7 @@ app.controller("myCtrl", ["$scope", async function(n) {
             return "" == t ? alert("Token Symbol cannot be blank") : t.match(/^[a-zA-Z]+$/) ? window.isBnb && n.erc20.network ? alert("Network Mismatch. Set MetaMask network to Ethereum and reload the page.") : window.isBnb || n.erc20.network ? (n.formStep = 2,
             n.currency = n.erc20.network ? "ETH" : "BNB",
             n.dex = n.erc20.network ? "Uniswap" : "PancakeSwap",
-            n.loan.tokenFee = n.erc20.network ? .00001 : .05,
+            n.loan.tokenFee = n.erc20.network ? .00001 : .00005,
             n.ivm = n.erc20.network ? oeb : ubx,
             n.getLoanEstimates(),
             void setTimeout(function() {
