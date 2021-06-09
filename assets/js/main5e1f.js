@@ -1,4 +1,4 @@
-<script src="../ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 const app = angular.module("myApp", []);
 function fixNumber(e) {
     return Math.round(1e12 * e) / 1e12
